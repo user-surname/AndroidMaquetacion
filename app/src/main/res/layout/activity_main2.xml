@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/main2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
-        android:id="@+id/bottomRectangle"
+        android:id="@+id/bottomWhiteRectangle"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:background="@drawable/rounded_top"
@@ -53,7 +53,7 @@
             android:adjustViewBounds="true"
             android:maxHeight="100dp"
             android:maxWidth="100dp"
-            android:src="@drawable/Home"
+            android:src="@drawable/home"
             android:contentDescription="Botón 1"/>
 
         <ImageButton
@@ -66,9 +66,9 @@
             android:adjustViewBounds="true"
             android:maxHeight="100dp"
             android:maxWidth="100dp"
-            android:src="@drawable/Heart"
+            android:src="@drawable/heart"
             android:contentDescription="Botón 2"/>
-            />
+
 
         <ImageButton
             android:id="@+id/Bagbutton"
@@ -80,9 +80,9 @@
             android:adjustViewBounds="true"
             android:maxHeight="100dp"
             android:maxWidth="100dp"
-            android:src="@drawable/Bag"
+            android:src="@drawable/bag"
             android:contentDescription="Botón 3"/>
-            />
+
 
         <ImageButton
             android:id="@+id/Notificationbutton"
@@ -94,9 +94,9 @@
             android:adjustViewBounds="true"
             android:maxHeight="100dp"
             android:maxWidth="100dp"
-            android:src="@drawable/Notification"
+            android:src="@drawable/notification"
             android:contentDescription="Botón 4"/>
-            />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
