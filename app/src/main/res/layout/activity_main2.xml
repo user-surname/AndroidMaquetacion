@@ -6,20 +6,726 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2"
-    android:background="@color/fondo">
+    android:background="@color/fondo"
+    android:clipChildren="false">
 
-    <View
+    <LinearLayout
         android:id="@+id/rectangulo_gradiente"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/gradient_rect"
+        android:orientation="vertical"
+        android:paddingTop="100dp"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.33" />
+        app:layout_constraintHeight_percent="0.33"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="359dp"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/texto_rectangulo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Location"
+                android:textColor="@color/grey"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/texto_rectangulo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Bilzen_Tanjungbalai"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/texto_rectangulo1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/searchBar1"
+            android:layout_width="359dp"
+            android:layout_height="98dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/searchBar2"
+                android:layout_width="299dp"
+                android:layout_height="50dp"
+                android:background="@drawable/search_bar_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp">
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Icono de búsqueda"
+                    android:src="@drawable/search"/>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/searchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/Search_coffee"
+                    android:textColor="#A2A2A2"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/options"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/optoinIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Icono de búsqueda"
+                    android:src="@drawable/icon"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/bottomRectangle"
+        android:layout_width="359dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <FrameLayout
+            android:layout_width="359dp"
+            android:layout_height="155dp"
+            android:background="@drawable/banner"
+            android:clipToOutline="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="110dp"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/promo"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Promo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/BuyonegetoneFREE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangulo_gradiente"
+        app:layout_constraintBottom_toTopOf="@+id/bottomWhiteRectangle"
+        android:layout_marginTop="100dp"
+        android:layout_height="0dp"
+        android:gravity="center">
+
+
+            <ScrollView
+                android:layout_width="359dp"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="359dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/coffe_options"
+                    android:padding="5dp"
+                    android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:text="@string/All_Coffee" />
+
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/machiatto"
+                        android:padding="5dp"
+                        android:layout_marginEnd="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#313131"
+                            android:textSize="17dp"
+                            android:text="@string/Machiato" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/machiatto"
+                        android:padding="5dp"
+                        android:layout_marginEnd="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#313131"
+                            android:textSize="17dp"
+                            android:text="@string/Latte" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/machiatto"
+                        android:padding="5dp"
+                        android:layout_marginEnd="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#313131"
+                            android:textSize="17dp"
+                            android:text="@string/Americano" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/machiatto"
+                        android:padding="5dp"
+                        android:layout_marginEnd="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#313131"
+                            android:textSize="17dp"
+                            android:text="@string/Cappuccino" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/coffe_rectangle"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp">
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/layoutA"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/caffe_mocha"/>
+
+                                <ImageView
+                                    android:id="@+id/star1"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:padding="4dp"
+                                    android:src="@drawable/deafult"
+                                    android:contentDescription="Favorito"
+                                    android:clickable="true"
+                                    android:focusable="true"/>
+
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="17dp"
+                                    android:text="@string/Caffe_Mocha"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/grey"
+                                    android:textSize="13dp"
+                                    android:text="@string/Deep_Foam"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/tvPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="25sp"
+                                        android:text="@string/caffe_macha_price"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"/>
+
+                                    <LinearLayout
+                                        android:layout_width="34dp"
+                                        android:layout_height="34dp"
+                                        android:background="@drawable/plus_rectangle"
+                                        android:gravity="center"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/optoinsIcon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:contentDescription="Icono plus"
+                                            android:src="@drawable/plus"/>
+                                    </LinearLayout>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/coffe_rectangle"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp">
+
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/layoutA2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/flat_white"/>
+
+                                    <ImageView
+                                        android:id="@+id/star2"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="top|end"
+                                        android:padding="4dp"
+                                        android:src="@drawable/deafult"
+                                        android:contentDescription="Favorito"
+                                        android:clickable="true"
+                                        android:focusable="true"/>
+
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginTop="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="17dp"
+                                        android:text="@string/Flat_White"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/grey"
+                                        android:textSize="13dp"
+                                        android:text="@string/Espresso"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tvPrice2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/black"
+                                            android:textSize="25sp"
+                                            android:text="@string/Flat_White_prize"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"/>
+
+                                        <LinearLayout
+                                            android:layout_width="34dp"
+                                            android:layout_height="34dp"
+                                            android:background="@drawable/plus_rectangle"
+                                            android:gravity="center"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <ImageView
+                                                android:id="@+id/optoinsIcon2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:contentDescription="Icono plus"
+                                                android:src="@drawable/plus"/>
+                                        </LinearLayout>
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp">
+
+                        <LinearLayout
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/coffe_rectangle"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/layoutA3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/mocha_fusi"/>
+
+                                    <ImageView
+                                        android:id="@+id/star3"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="top|end"
+                                        android:padding="4dp"
+                                        android:src="@drawable/deafult"
+                                        android:contentDescription="Favorito"
+                                        android:clickable="true"
+                                        android:focusable="true"/>
+
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginTop="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="17dp"
+                                        android:text="@string/Mocha_Fusi"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/grey"
+                                        android:textSize="13dp"
+                                        android:text="@string/Ice_Hot"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tvPrice3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/black"
+                                            android:textSize="25sp"
+                                            android:text="@string/Mocha_Fusi_prize"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"/>
+
+                                        <LinearLayout
+                                            android:layout_width="34dp"
+                                            android:layout_height="34dp"
+                                            android:background="@drawable/plus_rectangle"
+                                            android:gravity="center"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <ImageView
+                                                android:id="@+id/optoinsIcon3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:contentDescription="Icono plus"
+                                                android:src="@drawable/plus"/>
+                                        </LinearLayout>
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/coffe_rectangle"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp">
+
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/layoutA4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/caffe_panama"/>
+
+                                    <ImageView
+                                        android:id="@+id/star4"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="top|end"
+                                        android:padding="4dp"
+                                        android:src="@drawable/deafult"
+                                        android:contentDescription="Favorito"
+                                        android:clickable="true"
+                                        android:focusable="true"/>
+
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginTop="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="17dp"
+                                        android:text="@string/Caffe_Panna"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/grey"
+                                        android:textSize="13dp"
+                                        android:text="@string/Ice_Hot"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tvPrice4"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/black"
+                                            android:textSize="25sp"
+                                            android:text="@string/Caffe_Panna_prize"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"/>
+
+                                        <LinearLayout
+                                            android:layout_width="34dp"
+                                            android:layout_height="34dp"
+                                            android:background="@drawable/plus_rectangle"
+                                            android:gravity="center"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <ImageView
+                                                android:id="@+id/optoinsIcon4"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:contentDescription="Icono plus"
+                                                android:src="@drawable/plus"/>
+                                        </LinearLayout>
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomBrownRectangle"
         android:layout_width="0dp"
         android:layout_height="83dp"
         android:orientation="horizontal"
@@ -42,7 +748,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Botones con iconos -->
         <ImageButton
             android:id="@+id/Homebutton"
             android:layout_width="0dp"
